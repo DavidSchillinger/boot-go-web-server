@@ -1,0 +1,72 @@
+### Reset
+POST http://localhost:8080/admin/reset
+Accept: application/json
+
+{}
+
+### Get chirps
+GET http://localhost:8080/api/chirps
+Accept: application/json
+
+### Get chirp
+GET http://localhost:8080/api/chirps/05fea2b5-4049-422e-aca3-d34709d806ea
+Accept: application/json
+
+### Create chirp
+POST http://localhost:8080/api/chirps
+Accept: application/json
+
+{
+  "body": "This is an opinion I need to share with the world",
+  "user_id": "1895aa69-47b5-4357-8b10-3c78cff05721"
+}
+
+### Validate chirp with >140 characters len
+POST http://localhost:8080/api/chirps
+Accept: application/json
+
+{
+  "body": "This is an opinion I need to share with the world This is an opinion I need to share with the world This is an opinion I need to share with the world",
+  "user_id": "1895aa69-47b5-4357-8b10-3c78cff05721"
+}
+
+### Validate chirp with profane word
+POST http://localhost:8080/api/chirps
+Accept: application/json
+
+{
+  "body": "This is a kerfuffle opinion I need to share with the world",
+  "user_id": "1895aa69-47b5-4357-8b10-3c78cff05721"
+}
+
+### Create user
+POST http://localhost:8080/api/users
+Accept: application/json
+
+{
+  "email": "user-b@example.com",
+  "password": "foobar"
+}
+
+### Login
+POST http://localhost:8080/api/login
+Accept: application/json
+
+{
+  "email": "user-b@example.com",
+  "password": "foobar"
+}
+
+### Refresh
+POST http://localhost:8080/api/refresh
+Accept: application/json
+Authorization: Bearer 5a02a6babe03ae054030d452e7b243335a3eaebf8b095db38142c0f4ae39b417
+
+{}
+
+### Revoke
+POST http://localhost:8080/api/revoke
+Accept: application/json
+Authorization: Bearer 5a02a6babe03ae054030d452e7b243335a3eaebf8b095db38142c0f4ae39b417
+
+{}
